@@ -35,4 +35,5 @@ $discord->sendNotification("Order delivered", false, 'User info', ["order_id" =>
 return response()->json('notified');
 ```
 
-![Example Image](https://drive.google.com/file/d/1jHwB1bSJz6v4-2IdQgFfbciBH9HybJxL/view?usp=drive_link)
+![Example Image](https://drive.google.com/uc?export=view&id=1jHwB1bSJz6v4-2IdQgFfbciBH9HybJxL)
+
