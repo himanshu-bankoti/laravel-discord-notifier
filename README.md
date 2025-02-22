@@ -27,6 +27,7 @@ return response()->json('notified');
 
 Similarly you can embed the details or logs, by passing a array of data and a associated message:
 
+
 ```php
 use Mountrix\DiscordNotification\DiscordNotifier;
 
@@ -34,6 +35,9 @@ $discord = new DiscordNotifier('your-webhook-url');
 $discord->sendNotification("Order delivered", false, 'User info', ["order_id" => 'ABC1234', 'amount' => 200]);
 return response()->json('notified');
 ```
+
+
+## Sample output
 
 ![Example Image](https://drive.google.com/uc?export=view&id=1jHwB1bSJz6v4-2IdQgFfbciBH9HybJxL)
 
