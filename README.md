@@ -26,7 +26,7 @@ $discord->sendNotification(
     false // true: errorAlert, false: successAlert
 );
 
-return response()->json('notified');
+return response()->json(["message" => "Notified"]);
 ```
 
 Similarly you can embed the details or logs, by passing a array of data and a associated message:
@@ -46,7 +46,7 @@ $discord->sendNotification(
     ]
 );
 
-return response()->json('notified');
+return response()->json(["message" => "Notified"]);
 ```
 
 
