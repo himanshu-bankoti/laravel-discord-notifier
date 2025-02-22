@@ -1,0 +1,30 @@
+{
+  "name": "mountrix/laravel-discord-notifier",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Mountrix\\DiscordNotification\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "mountrix"
+    }
+  ],
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Mountrix\\DiscordNotification\\DiscordServiceProvider"
+      ],
+      "aliases": {
+        "DiscordNotifier": "Mountrix\\DiscordNotification\\DiscordNotifier"
+      }
+    }
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "illuminate/support": "^9.0|^10.0|^11.0",
+    "guzzlehttp/guzzle": "^7.9"
+  }
+}
