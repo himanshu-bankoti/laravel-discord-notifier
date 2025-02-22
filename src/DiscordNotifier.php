@@ -18,7 +18,7 @@ class DiscordNotifier extends Facade
     {
         $this->discordNotificationHandler = new DiscordNotificationHandler($webhookUrl);
     }
-    public function sendFailAlert(
+    public function sendNotification(
         string $message,
         bool $isFailedNotification,
         string $alertMessage = null,
