@@ -5,6 +5,11 @@
 
 A simple Laravel package to send notifications to Discord channels. Helping you easily integrate Discord alerts into your applications.
 
+## Contributing
+
+We welcome contributions to improve this package! If you'd like to contribute, feel free to open an issue or submit a pull request. Your help is greatly appreciated!
+
+
 ## Installation
 
 To install the package, run the following command:
