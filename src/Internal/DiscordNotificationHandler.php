@@ -1,10 +1,12 @@
 <?php
 
-namespace Mountrix\DiscordNotification;
+namespace Mountrix\DiscordNotification\Internal;
 
 use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
-
+/**
+ * @internal Handler
+ */
 class DiscordNotificationHandler
 {
     protected string $webHookUrl;
@@ -14,11 +16,11 @@ class DiscordNotificationHandler
     }
     public function sendDiscordNotification(
         string $message,
-        array $data = null
+        ?array $data = null
     ): ResponseInterface {
 
-        $client = new Client();
-        $postData =  $this->preparePostData($data, $message);
+        $client   = new Client();
+        $postData = $this->preparePostData($data, $message);
 
         $response = $client->post($this->webHookUrl, $postData);
 
@@ -33,7 +35,7 @@ class DiscordNotificationHandler
             ],
         ];
 
-        if (!empty($data)) {
+        if (! empty($data)) {
             $postData['json']['embeds'] = [$data];
         }
 
