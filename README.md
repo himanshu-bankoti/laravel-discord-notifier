@@ -15,7 +15,7 @@ composer require mountrix/laravel-discord-notifier
 
 ## Usage
 
-Classes will be automatically loaded into your application via Laravel's autoloading mechanism, similar to how the PSR-4 autoloading standard works in a service provider. You can implement it as demonstrated below:
+Demonstration:
 
 ```php
 use Mountrix\DiscordNotification\DiscordNotifier;

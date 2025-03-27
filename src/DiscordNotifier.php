@@ -3,16 +3,11 @@
 namespace Mountrix\DiscordNotification;
 
 use Exception;
-use Illuminate\Support\Facades\Facade;
+use Mountrix\DiscordNotification\Internal\DiscordNotificationHandler;
 use Psr\Http\Message\ResponseInterface;
-use Mountrix\DiscordNotification\DiscordNotificationHandler;
 
-class DiscordNotifier extends Facade
+class DiscordNotifier
 {
-    protected static function getFacadeAccessor(): string
-    {
-        return DiscordNotifier::class;
-    }
     public DiscordNotificationHandler $discordNotificationHandler;
     public function __construct(string $webhookUrl)
     {
@@ -21,18 +16,18 @@ class DiscordNotifier extends Facade
     public function sendNotification(
         string $message,
         bool $isFailedNotification,
-        string $alertMessage = null,
-        array $alertData = null
+        ?string $alertMessage = null,
+        ?array $alertData = null
     ): ResponseInterface {
         try {
             $finalData = [];
 
-            if (!empty($alertData)) {
+            if (! empty($alertData)) {
                 $formattedDataArray = $this->formatMessage($alertData);
 
                 $finalData = [
-                    "title" => empty($alertMessage) ? "Error" : $alertMessage,
-                    "color" => $this->pickEmbeddedColor($isFailedNotification ? 400 : 200),
+                    "title"  => empty($alertMessage) ? "Error" : $alertMessage,
+                    "color"  => $this->pickEmbeddedColor($isFailedNotification ? 400 : 200),
                     "fields" => $formattedDataArray,
                 ];
             }
