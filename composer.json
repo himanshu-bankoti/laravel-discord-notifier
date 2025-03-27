@@ -15,5 +15,19 @@
   "minimum-stability": "stable",
   "require": {
     "guzzlehttp/guzzle": "^7.9"
-  }
+  },
+  "keywords": [
+    "laravel",
+    "discord",
+    "notification",
+    "discord-notifications",
+    "webhooks",
+    "laravel-notification",
+    "laravel-discord",
+    "discord-webhooks",
+    "guzzle",
+    "laravel-package",
+    "php",
+    "notifications"
+  ]
 }
